@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenwriting Accordion</title>
+  <script>
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@500&display=swap');
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-family: 'Hahmlet', serif;
+}
+
+h1 {
+    font-family: 'Hahmlet', serif;
+    font-size: 15px;
+}
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-family: 'Andada Pro', serif;
+    font-size: 15px;
+    margin: 18px;
+}
+ </script>
+</head>
+
+<body>
+    <h1>What is Screenwriting?</h1>
+    <p>A Selection of quotes on Screenwriting.</p>
+
+    <button class="accordion"><h2>Fears of being a screenwriter.</h2></button>
+    <div class="panel">
+        <p>“Black has depth… you can go into it… And you start seeing what you’re afraid of. You start seeing what you love, and it becomes like a dream."-David Lynch</p>
+    </div>
+
+    <button class="accordion"><h2>Wonder of Story in Screenwriting.</h2></button>
+    <div class="panel">
+        <p>"Good movies make you care, make you believe in possibilities again. If somewhere in the Hollywood-entertainment world someone has managed to break through with something that speaks to you, then it isn’t all corruption. The movie doesn’t have
+            to be great; it can be stupid and empty and you can still have the joy of a good performance, or the joy in just a good line. An actor’s scowl, a small subversive gesture, a dirty remark that someone tosses off with a mock-innocent face, and
+            the world makes a little bit of sense." -Paulene Kael</p>
+    </div>
+
+    <button class="accordion"><h2>The Essence of Every Screenplay.</h2></button>
+    <div class="panel">
+        <p>"Try to reach for a simple, visual phrase that tells you what the picture is all about and evokes the essence of the story"-Saul Bass</p>
+    </div>
+
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+ </script>
+</body>
+
+</html>
